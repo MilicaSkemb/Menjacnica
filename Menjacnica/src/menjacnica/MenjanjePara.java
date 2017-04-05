@@ -18,13 +18,21 @@ public class MenjanjePara implements Specifikacija {
 	}
 	@Override
 	public void obrisiKurs(GregorianCalendar datumKursa) {
-		
-
+		for (int i = 0; i < v.getKurseviValute().size(); i++) {
+			if(v.getKurseviValute().get(i).getDatumKursa().equals(datumKursa)){
+				v.getKurseviValute().remove(i);
+				break;
+			}
+		}
 	}
 
 	@Override
 	public Kursevi nadjiKursZaOdredjeniDatum(GregorianCalendar datumKursa) {
-		
+		for (int i = 0; i < v.getKurseviValute().size(); i++) {
+			if(v.getKurseviValute().get(i).getDatumKursa().equals(datumKursa)){
+				return v.getKurseviValute().get(i);
+			}
+		}
 		return null;
 	}
 
