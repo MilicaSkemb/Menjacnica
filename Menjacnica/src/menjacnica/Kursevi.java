@@ -11,24 +11,36 @@ public class Kursevi {
 		return datumKursa;
 	}
 	public void setDatumKursa(GregorianCalendar datumKursa) {
+		if(datumKursa == null){
+			throw new RuntimeException("Nepostojeci datum");
+		}
 		this.datumKursa = datumKursa;
 	}
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(double prodajniKurs) {
+		if(prodajniKurs <= 0){
+			throw new RuntimeException("Kurs ne moze biti manji od 0");
+		}
 		this.prodajniKurs = prodajniKurs;
 	}
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
+		if(srednjiKurs <= 0){
+			throw new RuntimeException("Kurs ne moze biti manji od 0");
+		}
 		this.srednjiKurs = srednjiKurs;
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(double kupovniKurs) {
+		if(kupovniKurs <= 0){
+			throw new RuntimeException("Kurs ne moze biti manji od 0");
+		}
 		this.kupovniKurs = kupovniKurs;
 	}
 	@Override

@@ -6,8 +6,10 @@ public class Menjacnica {
 	public Valuta getNaziv() {
 		return naziv;
 	}
-
 	public void setNaziv(Valuta naziv) {
+		if(naziv == null){
+			throw new RuntimeException("Nije unet korektan naziv.");
+		}
 		this.naziv = naziv;
 	}
 	@Override

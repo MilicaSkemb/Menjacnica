@@ -10,26 +10,32 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv == null || naziv == ""){
+			throw new RuntimeException("Nije unet konkretan naziv.");
+		}
 		this.naziv = naziv;
 	}
 	public String getSkraceniNazivValute() {
 		return skraceniNazivValute;
 	}
 	public void setSkraceniNazivValute(String skraceniNazivValute) {
+		if(skraceniNazivValute == null || skraceniNazivValute == ""){
+			throw new RuntimeException("Nije unet konkretan naziv.");
+		}
+		if(skraceniNazivValute.length() != 3){
+			throw new RuntimeException("Nije unet skracen naziv.");
+		}
 		this.skraceniNazivValute = skraceniNazivValute;
 	}
 	public LinkedList<Kursevi> getKurseviValute() {
 		return kurseviValute;
 	}
 	public void setKurseviValute(LinkedList<Kursevi> kurseviValute) {
+		if(kurseviValute == null){
+			throw new RuntimeException("Prosledjena je prazna lista.");
+		}
 		this.kurseviValute = kurseviValute;
 	}
-	@Override
-	public String toString() {
-		return "Valuta Naziv = " + naziv + ", Skraceni naziv valute = " + skraceniNazivValute + ", Kursevi valute ="
-				+ kurseviValute;
-	}
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
